@@ -15,7 +15,7 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide2.QtWidgets import (QApplication, QListWidget, QListWidgetItem, QPushButton,
+from PySide2.QtWidgets import (QApplication, QListWidget, QListWidgetItem, QPushButton, QCheckBox,
     QSizePolicy, QWidget, QDialog)
 
 from dialog_ui_form import Ui_Dialog
@@ -49,6 +49,14 @@ class Ui_Widget(object):
             widget.show()
             widget.exec_()
 
+        def addcheck():
+            self.checkBox = QCheckBox("这是一个复选框", Widget)
+            self.checkBox.setObjectName("复选框")
+            self.checkBox.setGeometry(QRect(400, 410, 200, 18))
+            self.checkBox.show()
+            self.checkBox.setText(QCoreApplication.translate("Widget", "按钮按钮", None))
+
+
 
         # def ppp():
         #     Widget.close()
@@ -64,11 +72,15 @@ class Ui_Widget(object):
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(80, 280, 491, 41))
 
+        self.pushButton2 = QPushButton(Widget)
+        self.pushButton2.setObjectName(u"pushButton")
+        self.pushButton2.setGeometry(QRect(80, 350, 491, 41))
 
         self.retranslateUi(Widget)
         self.pushButton.clicked.connect(self.additem)
         self.listWidget.itemDoubleClicked.connect(self.printinfo)
         self.pushButton.clicked.connect(showwindows)
+        self.pushButton2.clicked.connect(addcheck)
         # self.pushButton.clicked.connect(ppp)
 
         QMetaObject.connectSlotsByName(Widget)
@@ -91,6 +103,8 @@ class Ui_Widget(object):
         ___qlistwidgetitem4.setText(QCoreApplication.translate("Widget", u"\u65b0\u5efa\u9879\u76ee5", None));
         self.listWidget.setSortingEnabled(__sortingEnabled)
 
-        self.pushButton.setText(QCoreApplication.translate("Widget", u"\u8fd9\u662f\u4e00\u4e2a\u6309\u94ae", None))
+        self.pushButton.setText(QCoreApplication.translate("Widget", "按钮1", None))
+        self.pushButton2.setText(QCoreApplication.translate("Widget", "按钮2", None))
+
     # retranslateUi
 
