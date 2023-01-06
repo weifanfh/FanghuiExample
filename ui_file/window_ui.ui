@@ -36,7 +36,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_1">
        <item>
-        <widget class="QComboBox" name="comboBox"/>
+        <widget class="QComboBox" name="combobox"/>
        </item>
        <item>
         <widget class="QComboBox" name="task_name"/>
